@@ -7,7 +7,9 @@ function FlashcardList({ questions }) {
         <Flashcard key={q.id} question={q} />
       ))}
     </div>
-  );
+  )
 }
 
 export default FlashcardList;
+
+
