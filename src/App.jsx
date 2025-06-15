@@ -1,20 +1,15 @@
 /* eslint-disable no-unused-vars */
-import { useState } from 'react'
+import {questions} from'./data/questions'
 import FlashcardList from './components/FlashcardList'
 
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    
-    <div>
+    <div className="App">
       <h1>Flashcard Quiz</h1>
-     
+      <FlashcardList questions={questions} />
     </div>
-    
-    
-  )
+  );
 }
 
 export default App
