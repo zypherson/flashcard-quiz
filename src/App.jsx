@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import {questions} from'./data/questions'
+import questions from './data/questions';
 import FlashcardList from './components/FlashcardList'
 
 

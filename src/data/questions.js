@@ -17,6 +17,12 @@ const questions = [
         options: ["Colorado", "Florence", "Uganda", "Santa Barbara"],
         answer: "Colorado",
       },
+      {
+        id: 4,
+        question: "Which is not a periodic table elemetn",
+        options: ["Bleach", "Oxygen", "Potassium", "Carbon"],
+        answer: "Bleach",
+      },
   ];
   
   export default questions;
