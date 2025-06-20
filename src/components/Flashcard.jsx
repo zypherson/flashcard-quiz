@@ -1,10 +1,12 @@
 import { useState } from 'react';
 
-function Flashcard({ question }) {
+function Flashcard({ question, onAnswer }) {
   const [selected, setSelected] = useState(null);
 
   const handleClick = (option) => {
+    if (selected) return;
     setSelected(option);
+    onAnswer(option);
   };
 
   return (
