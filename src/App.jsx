@@ -2,7 +2,7 @@
 import questions from './data/questions';
 import FlashcardList from './components/FlashcardList'
 import { useState } from 'react';
-
+import Flashcard from './components/Flashcard';
 
 function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -10,6 +10,9 @@ function App() {
   const [showResult, setShowResult] = useState(false);
 
   const currentQuestion = questions[currentIndex];
+  
+  const progress = ((currentIndex) / questions.length) * 100;
+
 
   const handleAnswer = (selectedOption) => {
     if (selectedOption === currentQuestion.answer) {
@@ -32,6 +35,11 @@ function App() {
   return (
     <div className="App">
       <h1>Flashcard Quiz</h1>
+      {!showResult && (
+        <div className="progress-bar-container">
+          <div className="progress-bar" style={{ width: `${progress}%` }}></div>
+        </div>
+      )}
 
       {showResult ? (
         <div className="result">
