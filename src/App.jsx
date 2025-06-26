@@ -3,6 +3,8 @@ import questions from './data/questions';
 import FlashcardList from './components/FlashcardList'
 import { useState } from 'react';
 import Flashcard from './components/Flashcard';
+import { AnimatePresence } from 'framer-motion';
+
 
 function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -47,7 +49,15 @@ function App() {
           <button onClick={restartQuiz}>Try Again</button>
         </div>
       ) : (
-        <Flashcard question={currentQuestion} onAnswer={handleAnswer} />
+        <AnimatePresence mode="wait">
+        {!showResult && (
+          <Flashcard
+            key={currentQuestion.id}  
+            question={currentQuestion}
+            onAnswer={handleAnswer}
+          />
+        )}
+      </AnimatePresence>
       )}
     </div>
   );
