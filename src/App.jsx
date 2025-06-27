@@ -20,13 +20,16 @@ function App() {
     if (selectedOption === currentQuestion.answer) {
       setScore((prev) => prev + 1);
     }
-
+  };
+  const handleNext = () => {
     if (currentIndex + 1 < questions.length) {
       setCurrentIndex((prev) => prev + 1);
     } else {
       setShowResult(true);
     }
   };
+  
+
 
   const restartQuiz = () => {
     setCurrentIndex(0);
@@ -55,6 +58,8 @@ function App() {
             key={currentQuestion.id}  
             question={currentQuestion}
             onAnswer={handleAnswer}
+            onNext={handleNext}
+            isLast={currentIndex + 1 === questions.length}
           />
         )}
       </AnimatePresence>
